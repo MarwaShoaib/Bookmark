@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <link rel="icon" href="imgs/bookmark-regular.svg">
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="py-5 position-relative">
+        <section class="container my-3 position-relative">
+            <h1 class="text-center">Bookmarker</h1>
+            <div class="Bookmarker-body py-4">
+                <div class="text-center my-3">
+                    <h2><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites<i class="fa-solid fa-bookmark"></i></h2>
+                </div>
+                <div class="my-4">
+                    <label for="name"> <i class="fa-solid fa-book-bookmark me-2"></i>  Site Name</label>
+                    <input type="text" id="name" placeholder="Bookmarker Name" class="form-control mt-2" oninput="validation(this)">
+                </div>
+               <div class="my-4">
+                    <label for="url"> <i class="fa-solid fa-link me-2"></i> Site URL</label>
+                    <input type="text" id="url" placeholder="Website URL" class="form-control mt-2" oninput="validation(this)">
+               </div>
+                <div class="text-center">
+                    <button class="btn submit px-5" id="submit" onclick="addBook()">Submit</button>
+                </div>
+            </div>
+            <table class="table text-center mt-4">
+                <thead>
+                    <tr>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">Website Name</th>
+                        <th class="text-capitalize">Visit</th>
+                        <th class="text-capitalize">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td><button onclick="visitSite()" class="visit btn px-3"><i class="fa-regular fa-eye"></i> visit</button></td>
+                        <td><button onclick="deletBook()" class="delete btn"><i class="fa-solid fa-trash-can"></i> delete</button></td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </section>
+        <section id="layer" class="layer position-absolute top-0 bottom-0 end-0 start-0 z-1 d-flex justify-content-center align-items-center d-none">
+            <div class="box bg-white rounded-2 p-4 d-flex flex-column gap-4">
+                <div class="header d-flex justify-content-between ">
+                    <div class="circle">
+                        <span class="rounded-circle me-2"></span>
+                        <span class="rounded-circle me-2"></span>
+                        <span class="rounded-circle me-2"></span>
+                    </div>
+                    <div><button class="btn border-0 close" onclick="closeBox()" ><i class="fa-solid fa-xmark fs-3"></i></button></div>
+                </div>
+                <p>Site Name or Url is not valid, Please follow the rules below :</p>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fa-regular fa-circle-right"></i> Site name must contain at least 3 characters</li>
+                    <li><i class="fa-regular fa-circle-right"></i> Site URL must be a valid one</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
